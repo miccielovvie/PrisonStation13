@@ -3,11 +3,11 @@
  * You can also toggle visibility from in-game with toggle-hub-visibility; be aware that it takes a few minutes for the hub go
  */
 	hub = "Exadv1.spacestation13"
-	name = "Space Station 13"
+	name = "Prison Station 13"
 
 /world/proc/update_hub_visibility()
 	GLOB.visibility_pref = !(GLOB.visibility_pref)
 	if(GLOB.visibility_pref)
-		hub_password = "kMZy3U5jJHSiBQjr"
+		hub_password = "WeWontEverUseAPassword"
 	else
 		hub_password = "SORRYNOPASSWORD"
