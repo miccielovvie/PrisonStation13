@@ -6,7 +6,7 @@
 	var/list/cooldown = list()  // captain verbs that are being cooled down and cant be used
 	var/points = 0 //KOTH stuff, trench capping game mode doesn't use this.
 	var/nuked = FALSE //When set to true this side instantly loses. PONR uses it.
-	var/left = 60 //Number of reinforcements both sides have.
+	var/left = 100 //Number of reinforcements both sides have.
 	var/datum/squad/squadA
 	var/datum/squad/squadB
 	var/datum/squad/squadC
@@ -48,11 +48,11 @@
 SUBSYSTEM_DEF(warfare)
 	name = "Warfare"
 	flags = SS_NO_FIRE
-	wait = 1
+	wait = 0
 	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY
 	var/datum/team/blue
 	var/datum/team/red
-	var/battle_wait = 2 MINUTES
+	var/battle_wait = 0 
 	var/battle_time = 0
 	var/complete = ""
 
@@ -102,15 +102,15 @@ SUBSYSTEM_DEF(warfare)
 	if(red.left <= 0)
 		feedback_set_details("round_end_result","win-blue team no reinforcements")
 		complete = "win-blue team no reinforcements"
-		to_world("<FONT size = 3><B>[BLUE_TEAM] Minor Victory!</B></FONT>")
-		to_world("<B>\The [BLUE_TEAM] managed to deplete all of \the [RED_TEAM]'s reinforcements! They retreat in shame!</B>")
+		to_world("<FONT size = 3><B>[BLUE_TEAM] managed to commit a mass Tragedy!</B></FONT>")
+		to_world("<B>\The [BLUE_TEAM] managed to murder all of \the [RED_TEAM] Guards!</B>")
 		assign_victory(TRUE)
 
 	else if(blue.left <= 0)
 		feedback_set_details("round_end_result","win-red team no reinforcements")
 		complete = "win-red team no reinforcements"
-		to_world("<FONT size = 3><B>[RED_TEAM] Minor Victory!</B></FONT>")
-		to_world("<B>\The [RED_TEAM] managed to deplete all of \the [BLUE_TEAM]'s reinforcements! They retreat in shame!</B>")
+		to_world("<FONT size = 3><B>[RED_TEAM] managaged to murder all of the prisoners in a fit of rage, a mass tragedy.</B></FONT>")
+		to_world("<B>\The [RED_TEAM] managed to kill all of \the [BLUE_TEAM] They're not going to commit crimes any time soon!</B>")
 		assign_victory(FALSE, TRUE)
 
 	//Point of no return
