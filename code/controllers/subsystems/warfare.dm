@@ -110,7 +110,7 @@ SUBSYSTEM_DEF(warfare)
 		feedback_set_details("round_end_result","win-red team no reinforcements")
 		complete = "win-red team no reinforcements"
 		to_world("<FONT size = 3><B> The Guards have commited a mass tragedy!</B></FONT>")
-		to_world("<B>\The Guards have maltreated every prisoner resulting in their painful deaths. The prison will shut down soon.</B>")
+		to_world("<B>\ The Guards have maltreated every prisoner resulting in their painful deaths. The prison will shut down soon.</B>")
 		assign_victory(FALSE, TRUE)
 
 	//Point of no return
