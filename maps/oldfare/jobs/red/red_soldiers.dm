@@ -1,11 +1,11 @@
 /datum/job/soldier/red_soldier
-	title = "Red Soldier"
+	title = "Guard"
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/soldier
 	is_red_team = TRUE
 	selection_color = "#b27676"
 
 	auto_rifle_skill = 10 //This is leftover from coldfare, but we could go back to that one day so better not to mess with it.
-	semi_rifle_skill = 10
+	semi_rifle_skill = 8
 	sniper_skill = 3
 	shotgun_skill = 6
 	lmg_skill = 3
@@ -18,22 +18,22 @@
 		SSwarfare.red.team += H
 		if(can_be_in_squad)
 			H.assign_random_squad(RED_TEAM)
-		H.fully_replace_character_name("Pvt. [H.real_name]")
+		H.fully_replace_character_name("Grd. [H.real_name]")
 		H.warfare_language_shit(LANGUAGE_RED)
 		H.assign_random_quirk()
 		if(announced)
-			H.say(";Soldier reporting for duty!")
+			H.say(";Guard reporting for duty!")
 
 /datum/job/soldier/red_soldier/sgt
-	title = "Red Squad Leader"
+	title = "Commander"
 	total_positions = 3
 	social_class = SOCIAL_CLASS_MED
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/sgt
 	can_be_in_squad = FALSE //They have snowflake shit for squads.
 
 	auto_rifle_skill = 10
-	semi_rifle_skill = 10
-	shotgun_skill = 10
+	semi_rifle_skill = 9
+	shotgun_skill = 8
 
 	announced = FALSE
 
@@ -42,7 +42,7 @@
 		..()
 		H.verbs += /mob/living/carbon/human/proc/morale_boost
 		H.assign_squad_leader(RED_TEAM)
-		H.fully_replace_character_name("Sgt. [current_name]")
+		H.fully_replace_character_name("Cmd. [current_name]")
 		H.say(";[title] reporting for duty!")
 
 
@@ -110,7 +110,7 @@
 
 
 /datum/job/soldier/red_soldier/sentry
-	title = "Red Sentry"
+	title = "Riot Guard"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/sentry
 	auto_rifle_skill = 5
@@ -127,9 +127,9 @@
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
 		..()
-		H.fully_replace_character_name("Sentry [current_name]")
+		H.fully_replace_character_name("Riot Guard [current_name]")
 		H.add_stats(18, rand(10,16), rand(15,18))
-		H.say(";Sentry reporting for duty!")
+		H.say(";Riot Guard reporting for duty!")
 
 /datum/job/soldier/red_soldier/flame_trooper
 	title = "Red Flame Trooper"
@@ -155,7 +155,7 @@
 		H.unlock_achievement(new/datum/achievement/flamer())
 
 /datum/job/soldier/red_soldier/captain
-	title = "Red Captain"
+	title = "Warden"
 	total_positions = 1
 	req_admin_notify = TRUE
 	social_class = SOCIAL_CLASS_HIGH
