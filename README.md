@@ -14,8 +14,3 @@ Thanks to:
 Matt, 
 Kfc man,
 Ugg,
-(more to come in the future)
-
-Hate to:
-
-jk.
