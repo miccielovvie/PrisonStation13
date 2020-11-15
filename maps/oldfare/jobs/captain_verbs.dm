@@ -181,4 +181,3 @@
 	T.startCooldown("Morale Boost", 10 MINUTES)
 	sound_to(T.team, 'sound/effects/klaxon_alarm.ogg')
 	to_chat(T.team, "<h1><span class='[class]'>OOORAH!</span></h1>")
-	
