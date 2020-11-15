@@ -117,15 +117,15 @@ SUBSYSTEM_DEF(warfare)
 	else if(red.nuked)
 		feedback_set_details("round_end_result","win-blue team point of no return")
 		complete = "win-blue team point of no return"
-		to_world("<FONT size = 3><B>[BLUE_TEAM] Major Victory!</B></FONT>")
-		to_world("<B>\The [BLUE_TEAM] managed to successfully activate \the [RED_TEAM]'s Point Of No Return! Their trenches are overrun! They retreat in shame!</B>")
+		to_world("<FONT size = 3><B> Prisoner Major Victory!</B></FONT>")
+		to_world("<B>\ The Prisoners managed to successfully activate \the Guards Point Of No Return! Their spawn overrun! They retreat!</B>")
 		assign_victory(TRUE)
 
 	else if(blue.nuked)
 		feedback_set_details("round_end_result","win-red team point of no return")
 		complete = "win-red team point of no return"
-		to_world("<FONT size = 3><B>[RED_TEAM] Major Victory!</B></FONT>")
-		to_world("<B>\The [RED_TEAM] managed to successfully activate \the [BLUE_TEAM]'s Point Of No Return! Their trenches are overrun! They retreat in shame!</B>")
+		to_world("<FONT size = 3><B> Guard Major Victory!</B></FONT>")
+		to_world("<B>\ The Guards managed to successfully activate \the Prisoners Point Of No Return! Their spawn overrun! They retreat!</B>")
 		assign_victory(FALSE, TRUE)
 
 	//KOTH shit
