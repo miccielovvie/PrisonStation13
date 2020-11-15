@@ -1,6 +1,6 @@
 /mob/living/carbon/human/proc/help_me()
-	set name = "Help me!"
-	set category = "Captain"
+	set name = "Call reinforcements!"
+	set category = "Warden"
 
 	if(stat)
 		return
@@ -21,14 +21,14 @@
 			continue
 		H.tracking.track(src)
 
-	to_chat(T.team, "<h1><span class='[class]'>Your Captain requires help!</span></h1>")
+	to_chat(T.team, "<h1><span class='[class]'>The Warden requires reinforcements!</span></h1>")
 
 	T.startCooldown("Help me!")
 	sound_to(T.team, 'sound/effects/klaxon_alarm.ogg')
 
 /mob/living/carbon/human/proc/retreat()
-	set name = "Retreat!"
-	set category = "Captain"
+	set name = "Prison lockdown!"
+	set category = "Warden"
 	if(stat)
 		return
 
@@ -39,18 +39,18 @@
 		class = "blue_team"
 		T = SSwarfare.blue
 
-	if(T.checkCooldown("Retreat!"))
+	if(T.checkCooldown("Shakedown!"))
 		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
 		return
 
-	to_chat(T.team, "<h1><span class='[class]'>Your Captain has ordered a retreat!</span></h1>")
+	to_chat(T.team, "<h1><span class='[class]'>The Warden has announced a lockdown, all inmates are to be searched and brought back to their cells. Any resisting will result in a severe beating!</span></h1>")
 
 	T.startCooldown("Retreat!")
 	sound_to(T.team, 'sound/effects/klaxon_alarm.ogg')
 
 /mob/living/carbon/human/proc/announce()
 	set name = "Make Announcement!"
-	set category = "Captain"
+	set category = "Warden"
 	if(stat)
 		return
 
@@ -86,14 +86,14 @@
 		log_and_message_admins("[src] just tried to ANNOUNCE cringe: [cringe]", src)
 		return
 
-	to_chat(T.team, "<h1><span class='[class]'>Announcement from Captain: <br> [announcement]</span></h1>")
+	to_chat(T.team, "<h1><span class='[class]'>Announcement from the Warden: <br> [announcement]</span></h1>")
 
 	T.startCooldown("Make Announcement!")
 	sound_to(T.team, 'sound/effects/klaxon_alarm.ogg')
 
 /mob/living/carbon/human/proc/give_order()
 	set name = "Give Order!"
-	set category = "Captain"
+	set category = "Warden"
 	if(stat)
 		return
 
@@ -127,7 +127,7 @@
 		to_chat(src, "[warning_message]&quot;</span>")
 		log_and_message_admins("[src] just tried to ANNOUNCE cringe: [cringe]", src)
 		return
-	to_chat(T.team, "<h1><span class='[class]'>Order from Captain: <br> [announcement]</span></h1>")
+	to_chat(T.team, "<h1><span class='[class]'>Order from Warden: <br> [announcement]</span></h1>")
 	log_and_message_admins("[src] gave the order: <b>[announcement]</b>.", src)
 
 	T.startCooldown("Give Order!")
@@ -135,8 +135,8 @@
 
 
 /mob/living/carbon/human/proc/check_reinforcements()
-	set name = "Check Reinforcements"
-	set category = "Captain"
+	set name = "Check guard lives"
+	set category = "Warden"
 
 	var/is_blue = SSjobs.GetJobByTitle(job).is_blue_team
 	var/datum/team/T =  SSwarfare.red
