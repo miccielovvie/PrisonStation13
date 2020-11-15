@@ -43,7 +43,10 @@
 		to_chat(src, "<span class='notice'>I can't overuse this!</span>")
 		return
 
+ main
 	to_chat(T.team, "<h1><span class='[class]'>The Warden has announced a lockdown, all inmates are to be searched and brought back to their cells. Any resisting will result in a severe beating!</span></h1>")
+	to_chat(T.team, "<h1><span class='[class]'>The Warden has decided to do a shakedown, check the pockets of the prisoners!!</span></h1>")
+ main
 
 	T.startCooldown("Retreat!")
 	sound_to(T.team, 'sound/effects/klaxon_alarm.ogg')
