@@ -1,8 +1,8 @@
 /datum/job/soldier/blue_soldier
-	title = "Blue Soldier"
+	title = "Prisoner"
 	outfit_type = /decl/hierarchy/outfit/job/bluesoldier/soldier
 	is_blue_team = TRUE
-	selection_color = "#76abb2"
+	selection_color = "#f56d50"
 
 	auto_rifle_skill = 10 //This is leftover from coldfare, but we could go back to that one day so better not to mess with it.
 	semi_rifle_skill = 10
@@ -18,11 +18,11 @@
 		SSwarfare.blue.team += H
 		if(can_be_in_squad)
 			H.assign_random_squad(BLUE_TEAM)
-		H.fully_replace_character_name("Pvt. [H.real_name]")
+		H.fully_replace_character_name("Pris. [H.real_name]")
 		H.warfare_language_shit(LANGUAGE_BLUE)
 		H.assign_random_quirk()
 		if(announced)
-			H.say(";Soldier reporting for duty!")
+			H.say(";Prisoner ready for transport!")
 
 /datum/job/soldier/blue_soldier/sgt
 	title = "Blue Squad Leader"
